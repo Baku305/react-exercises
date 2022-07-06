@@ -1,13 +1,9 @@
-import React from "react";
 import {createRoot} from "react-dom/client"
+import { Hello } from "./Components-02";
 
 const root = createRoot(document.getElementById("root"))
 
-class Hello extends React.Component {
-    render(){
-        return  <h1>Hello, World!</h1>
-    }
-}
+const helloEl = < Hello />
 
-root.render(<Hello/>)
+root.render(helloEl)
 
