@@ -10,7 +10,7 @@ export class Welcome5 extends React.Component {
   render() {
     return (
       <p>
-        Welcome {this.props.name}, <Age age="25" />{" "}
+        Welcome {this.props.name}, <Age age="25" />
       </p>
     );
   }
