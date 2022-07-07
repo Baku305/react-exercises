@@ -10,24 +10,24 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <span>
+        <div>
           <Hello />
-        </span>
-        <span>
+        </div>
+        <div>
           <Welcome name="Francesco" />
-        </span>
-        <span>
+        </div>
+        <div>
           <Welcome2 />
-        </span>
-        <span>
+        </div>
+        <div>
           <Welcome3 name="Giovanni" age="18" />
-        </span>
-        <span>
+        </div>
+        <div>
           <Welcome4 name="Marco" />
-        </span>
-        <span>
-          <Welcome5 name="Paola" />
-        </span>
+        </div>
+        <div>
+          <Welcome5 name="Paola" age = "20"/>
+        </div>
       </div>
     );
   }
