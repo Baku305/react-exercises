@@ -28,6 +28,9 @@ export class App extends React.Component {
         <div>
           <Welcome5 name="Paola" age = "20"/>
         </div>
+        <div>
+          <Welcome5 name="Paola" age = "17"/>
+        </div>
       </div>
     );
   }

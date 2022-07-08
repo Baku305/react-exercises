@@ -11,8 +11,10 @@ export class Welcome5 extends React.Component {
   render() {
     return (
         <div>
+            <p>
             <span>Welcome {this.props.name}</span>
-            <Age age = {this.props.age}/>
+            { this.props.age > 19 ? <Age age = {this.props.age}/> : ", you are a teenager" }
+            </p>
         </div>
     );
   }
