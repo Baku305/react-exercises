@@ -24,7 +24,7 @@ export class Welcome6 extends React.Component {
     return (
       <div>
         <p>
-          <span>Welcome {this.props.name}</span>
+          <span>Welcome {this.props.name === "John" && this.props.name}</span>
           {this.props.age && this.props.age > 18 && this.props.age < 65 && (
             <Age age={this.props.age} />
           )}

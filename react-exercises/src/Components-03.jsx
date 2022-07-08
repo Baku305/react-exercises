@@ -38,6 +38,9 @@ export class App extends React.Component {
         <div>
           <Welcome6 name="Nino" age = "66"/>
         </div>
+        <div>
+          <Welcome6 name="John" age = "66"/>
+        </div>
       </div>
     );
   }
