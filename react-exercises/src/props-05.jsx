@@ -16,7 +16,9 @@ export class Welcome5 extends React.Component {
             " insert an age"
           ) : this.props.age < 19 ? (
             " you are a teenager"
-          ) : (
+          ) : this.props.age >= 65 ? (
+            " enjoy your life"
+          ) :(
             <Age age={this.props.age} />
           )}
         </p>
