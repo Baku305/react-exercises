@@ -24,11 +24,10 @@ export class Welcome6 extends React.Component {
   render() {
     return (
       <div>
-        <span>
-          Welcome
-          {this.props.name === "John" ? this.props.name : " you aren't John"}
-        </span>
-        {this.props.age > 18 && this.props.age < 65 ? this.props.age : " insert a valid age"}
+        <p>
+          <span>Welcome {this.props.name}</span>
+          {this.props.age && this.props.age > 18 && <Age age = {this.props.age}/> }
+        </p>
       </div>
     );
   }
