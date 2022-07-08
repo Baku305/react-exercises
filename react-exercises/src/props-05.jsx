@@ -13,7 +13,7 @@ export class Welcome5 extends React.Component {
         <div>
             <p>
             <span>Welcome {this.props.name}</span>
-            { this.props.age > 19 ? <Age age = {this.props.age}/> : ", you are a teenager" }
+            {this.props.age > 18 && <Age age={this.props.age}/>}
             </p>
         </div>
     );
