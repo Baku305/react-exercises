@@ -2,7 +2,7 @@ import React from "react";
 
 export class Age extends React.Component {
   render() {
-    return <span> your age is {this.props.age}</span>;
+    return <span> {this.props.age >=18 ? `your age is ${this.props.age}` : "You are very young!"}</span>;
   }
 }
 
@@ -12,7 +12,7 @@ export class Welcome5 extends React.Component {
       <div>
         <p>
           <span>Welcome {this.props.name}</span>
-          {this.props.age > 18 && <Age age={this.props.age} />}
+          {this.props.age > 15 && <Age age={this.props.age} />}
         </p>
       </div>
     );
