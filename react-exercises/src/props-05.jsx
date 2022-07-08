@@ -9,20 +9,13 @@ export class Age extends React.Component {
 export class Welcome5 extends React.Component {
   render() {
     return (
-      <div>
-        <p>
-          <span>Welcome {this.props.name}</span>
-          {!this.props.age ? (
-            " insert an age"
-          ) : this.props.age < 19 ? (
-            " you are a teenager"
-          ) : this.props.age >= 65 ? (
-            " enjoy your life"
-          ) : (
-            <Age age={this.props.age} />
-          )}
-        </p>
-      </div>
+
+        <div>
+            <p>
+            <span>Welcome {this.props.name}</span>
+            {this.props.age > 18 && <Age age={this.props.age}/>}
+            </p>
+        </div>
     );
   }
 }
