@@ -5,6 +5,7 @@ import { Welcome2 } from "./Props-02";
 import { Welcome3 } from "./Props-03";
 import { Welcome4 } from "./props-04";
 import { Welcome5 } from "./props-05";
+import { Welcome6 } from "./props-05";
 
 export class App extends React.Component {
   render() {
@@ -36,6 +37,9 @@ export class App extends React.Component {
         </div>
         <div>
           <Welcome5 name="Federica" age = "66"/>
+        </div>
+        <div>
+        <Welcome6 name = "Jake" age = "15"/>
         </div>
       </div>
     );
