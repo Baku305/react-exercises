@@ -12,13 +12,7 @@ export class Welcome5 extends React.Component {
       <div>
         <p>
           <span>Welcome {this.props.name}</span>
-          {!this.props.age ? (
-            " insert an age"
-          ) : this.props.age < 19 ? (
-            " you are a teenager"
-          ) : (
-            <Age age={this.props.age} />
-          )}
+          {this.props.age && this.props.age > 18 && <Age age = {this.props.age}/> }
         </p>
       </div>
     );

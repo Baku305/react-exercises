@@ -29,10 +29,10 @@ export class App extends React.Component {
           <Welcome5 name="Paola" age = "20"/>
         </div>
         <div>
-          <Welcome5 name="Paola" age = "17"/>
+          <Welcome5 name="Piero" age = "17"/>
         </div>
         <div>
-          <Welcome5 name="Paola"/>
+          <Welcome5 name="Fabrizio"/>
         </div>
       </div>
     );
