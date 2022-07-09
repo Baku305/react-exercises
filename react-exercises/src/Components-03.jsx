@@ -6,6 +6,7 @@ import { Welcome3 } from "./Props-03";
 import { Welcome4 } from "./props-04";
 import { Welcome5 } from "./props-05";
 import { Welcome6 } from "./props-05";
+import { Counter } from "./Counter";
 
 export class App extends React.Component {
   render() {
@@ -40,6 +41,9 @@ export class App extends React.Component {
         </div>
         <div>
           <Welcome6 name="John" age = "64"/>
+        </div>
+        <div>
+          <Counter />
         </div>
       </div>
     );
