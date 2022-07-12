@@ -9,7 +9,7 @@ const HelloEl = <Hello />;
 const WelcomeEl = <Welcome name = "Francesco" />;
 const Welcome2El = <Welcome2 />;
 const Welcome3El = <Welcome3 name ="Giovanni" age="28" />;
-const Welcome4EL = <Welcome4 name = "Marco"/>
+const Welcome4EL = <Welcome4 name = {<strong>marco</strong>}/>
 
 export class App extends React.Component {
   render() {
