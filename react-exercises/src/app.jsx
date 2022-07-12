@@ -11,21 +11,6 @@ export class App extends React.Component {
     return (
       <div>
         <div>
-          <Hello />
-        </div>
-        <div>
-          <Welcome name="Francesco" />
-        </div>
-        <div>
-          <Welcome2 />
-        </div>
-        <div>
-          <Welcome3 name="Giovanni" age="18" />
-        </div>
-        <div>
-          <Welcome4 name="Marco" />
-        </div>
-        <div>
           <Welcome5 name="Paola" age = "20"/>
         </div>
       </div>
