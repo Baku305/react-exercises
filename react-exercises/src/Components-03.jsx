@@ -25,7 +25,7 @@ export class App extends React.Component {
           <Welcome3 name="Giovanni" age="18" />
         </div>
         <div>
-          <Welcome4 name="Marco" />
+          <Welcome4 name={<strong>Marco</strong>} />
         </div>
         <div>
           <Welcome5 name="Paola" age = "20"/>
