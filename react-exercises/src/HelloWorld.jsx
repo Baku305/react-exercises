@@ -1,5 +1,5 @@
 import React from "react";
-import { Message } from "./Components-07";
+import { Message } from "./Message";
 
 export class Hello extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Hello } from "./Components-02";
+import { Hello } from "./HelloWorld";
 import { Welcome } from "./Props-01";
 import { Welcome2 } from "./Props-02";
 import { Welcome3 } from "./Props-03";
