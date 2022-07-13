@@ -10,14 +10,10 @@ export class CounterDisplay extends React.Component{
 
 export class Counter extends React.Component{
 
-    constructor(props){
-        super(props)
-
-        this.state = {
+        state = {
             count : this.props.initialValue ?? 0
         }
-    }
-
+    
     componentDidMount() {
         setInterval(() => {
             this.tick()
