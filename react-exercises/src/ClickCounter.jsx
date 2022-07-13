@@ -10,7 +10,7 @@ export class ClickCounter extends React.Component {
     render(){
         return <div>
             <h1>Count : {this.state.count}</h1>
-            <button onClick={this.eventHandler}>Increase</button>
+            <CounterButton onClick={this.eventHandler}/>
             </div>
     }
 
@@ -20,4 +20,11 @@ export class ClickCounter extends React.Component {
         )
     }
 
+}
+
+export class CounterButton extends React.Component {
+    
+    render(){
+        return <button onClick={this.props.onClick}>Increase</button>
+    }
 }
