@@ -6,6 +6,9 @@ import Login from "./Login";
 import UncontrolledLogin from "./UncontrolledLogin";
 
 export class App extends React.Component {
+
+  onLogin = (state) => console.log(state);
+
   render() {
     return (
         <>
@@ -19,7 +22,7 @@ export class App extends React.Component {
           <InteractiveWelcome/>
         </div>
         <div>
-          <Login />
+          <Login onLogin = {this.onLogin}/>
         </div>
         <div>
           <UncontrolledLogin/>

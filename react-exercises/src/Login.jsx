@@ -8,8 +8,6 @@ export default class Login extends React.Component {
 		compiled: false,
 	};
 
-	onLogin = () => console.log(this.state);
-
 	eventHandler = (event) => {
 		this.setState({
 			[event.target.name]:
@@ -56,7 +54,7 @@ export default class Login extends React.Component {
 							onChange={this.eventHandler}
 						/>
 					</div>
-					<button onClick={this.onLogin} disabled={!this.state.compiled}>
+					<button onClick={()=>this.props.onLogin(this.state)} disabled={!this.state.compiled}>
 						LOGIN
 					</button>
 					<button onClick={this.eventReset}>RESET</button>
