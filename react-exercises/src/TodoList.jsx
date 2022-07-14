@@ -42,7 +42,7 @@ export default class TodoList extends React.Component {
 								<button
 									key={`button${el}${i}`}
 									onClick={() => {
-										this.state.items.splice(el[i], 1);
+										this.state.items.splice(i, 1);
 										this.setState({
                                             items : this.state.items
                                         })
