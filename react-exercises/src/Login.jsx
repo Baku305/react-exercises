@@ -2,14 +2,16 @@ import React from "react";
 
 export default class Login extends React.Component {
 
-	state = {
-		username: "",
-		password: "",
-		remember: true,
-		compiled: false,
-	};
+	//constructor(props){
+		//super(props)
+		state = {
+			username: "",
+			password: "",
+			remember: true,
+			compiled: false,
+		};
+	//}	
 
-	onLogin = () => console.log(this.state);
 
 	eventHandler = (event) => {
 		this.setState({
@@ -47,7 +49,7 @@ export default class Login extends React.Component {
 						onChange={this.eventHandler}
 					/>
 					</div>
-					<button onClick={this.onLogin} disabled = {!this.state.compiled}>LOGIN</button>
+					<button onClick={() => this.props.onLogin(this.state)} disabled = {!this.state.compiled}>LOGIN</button>
 				</div>
 			</>
 		);
