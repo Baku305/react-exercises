@@ -9,15 +9,6 @@ export class App extends React.Component {
     return (
         <>
         <div>
-        <ClickCounter />
-      </div>
-      <div>
-          <ClickTracker />
-        </div>
-        <div>
-          <InteractiveWelcome/>
-        </div>
-        <div>
           <Login />
         </div>
         </>
