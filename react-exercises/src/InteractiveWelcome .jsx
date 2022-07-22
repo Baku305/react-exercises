@@ -18,7 +18,7 @@ export default class InteractiveWelcome extends React.Component {
   render() {
     return (
       <>
-        <div>
+        <div className="welcome">
           <input type="text" onChange={this.eventHandler} />
           <Welcome name = {this.state.res}/>
         </div>
