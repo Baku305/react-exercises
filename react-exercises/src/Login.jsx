@@ -54,7 +54,7 @@ export default class Login extends React.Component {
 							onChange={this.eventHandler}
 						/>
 					</div>
-					<button onClick={()=>this.props.onLogin(this.state)} disabled={!this.state.compiled}>
+					<button onClick={()=>this.props.onLogin(this.state)} disabled={!this.state.compiled} style={{backgroundColor : this.state.password.length < 8 ? 'red' : 'green'}}>
 						LOGIN
 					</button>
 					<button onClick={this.eventReset}>RESET</button>
