@@ -1,6 +1,7 @@
 import React from "react";
 import { ClickCounter } from "./ClickCounter";
 import ClickTracker from "./ClickTracker ";
+import { Container } from "./Container";
 import InteractiveWelcome from "./InteractiveWelcome ";
 import Login from "./Login";
 import TodoList from "./TodoList";
@@ -32,9 +33,10 @@ export class App extends React.Component {
         <div>
           <TodoList/>
         </div>
-        <div>
+        <Container>
           <Welcome/>
-        </div>
+        </Container>
+
         </>
     );
   }
