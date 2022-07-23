@@ -2,14 +2,12 @@ import React from "react";
 import TodoList from "./TodoList";
 
 export class App extends React.Component {
-	onLogin = (state) => console.log(state);
-
 	render() {
 		return (
 			<>
 				<div>
 					<TodoList
-						render={(items) => {
+						render={(items,setState) => {
 							const itemsCopy = [...items.items];
 							return (
 								<ul className="list">
@@ -20,7 +18,11 @@ export class App extends React.Component {
 												<button
 													key={`button${el}${i}`}
 													id={`button${el}${i}`}
-													onClick={() => document.querySelector(".list").removeChild(document.querySelector(`#listEl-${i}`))
+													onClick={() => {document.querySelector(".list")
+                          .removeChild(document.querySelector(`#listEl-${i}`))
+                          setState({
+                            items : itemsCopy.splice(i,1)
+                          })}
 													}
 												>
 													CLEAR

@@ -40,7 +40,7 @@ export default class TodoList extends React.Component {
 						ADD
 					</button>
 					<button onClick={this.resetItems}>RESET</button>
-					{this.props.render(this.state)}
+					{this.props.render(this.state,this.setState())}
 				</div>
 			</>
 		);
