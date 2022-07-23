@@ -2,7 +2,12 @@ import React from "react";
 
 export default class TodoList extends React.Component {
 	state = {
-		items: ["fare la spesa", "portare a spasso il cane", "fare la lavatrice", "allenarsi"],
+		items: [
+			"fare la spesa",
+			"portare a spasso il cane",
+			"fare la lavatrice",
+			"allenarsi",
+		],
 		newItem: "",
 	};
 
@@ -35,26 +40,28 @@ export default class TodoList extends React.Component {
 						ADD
 					</button>
 					<button onClick={this.resetItems}>RESET</button>
-					<ul>
+					{this.props.render(this.state)}
+
+					{/* <ul>
 						{this.state.items.map((el, i) => (
 							<div key={`div${el}${i}`}>
-								<li key={el + i}>{el}
-                                <button
-									key={`button${el}${i}`}
-									onClick={() => {
-										this.state.items.splice(i, 1);
-										this.setState({
-                                            items : this.state.items
-                                        })
-									}}
-								>
-									CLEAR
-								</button>
-                                </li>
-								
+								<li key={el + i}>
+									{el}
+									<button
+										key={`button${el}${i}`}
+										onClick={() => {
+											this.state.items.splice(i, 1);
+											this.setState({
+												items: this.state.items,
+											});
+										}}
+									>
+										CLEAR
+									</button>
+								</li>
 							</div>
 						))}
-					</ul>
+					</ul> */}
 				</div>
 			</>
 		);
