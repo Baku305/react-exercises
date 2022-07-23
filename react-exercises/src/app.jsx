@@ -7,21 +7,16 @@ export class App extends React.Component {
 			<>
 				<div>
 					<TodoList
-						render={(items,newState) => {
+						render={(items,newState,deleteState) => {
 							const itemsCopy = [...items.items];
 							return (
 								<ul className="list">
 									{itemsCopy.map((el, i) => (
-										<div key={`div${el}${i}`} id={`listEl-${i}`}>
-											<li key={el + i}>
+										<div key={i}>
+											<li>
 												{el}
 												<button
-													key={`button${el}${i}`}
-													id={`button${el}${i}`}
-													onClick={() => {
-                            itemsCopy.splice(i,1)
-                            newState(itemsCopy)
-                          }
+													onClick={() => {deleteState(itemsCopy,i);newState(itemsCopy)}
 													}
 												>
 													CLEAR

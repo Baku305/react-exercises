@@ -36,6 +36,10 @@ export default class TodoList extends React.Component {
 		})
 	}
 
+	deleteState = (array,i) => {
+		array.splice(i,1)
+	  }
+
 
 
 	render() {
@@ -48,7 +52,7 @@ export default class TodoList extends React.Component {
 						ADD
 					</button>
 					<button onClick={this.resetItems}>RESET</button>
-					{this.props.render(this.state, this.newState)}
+					{this.props.render(this.state, this.newState, this.deleteState)}
 				</div>
 			</>
 		);
