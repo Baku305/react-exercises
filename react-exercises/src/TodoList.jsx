@@ -41,27 +41,6 @@ export default class TodoList extends React.Component {
 					</button>
 					<button onClick={this.resetItems}>RESET</button>
 					{this.props.render(this.state)}
-
-					{/* <ul>
-						{this.state.items.map((el, i) => (
-							<div key={`div${el}${i}`}>
-								<li key={el + i}>
-									{el}
-									<button
-										key={`button${el}${i}`}
-										onClick={() => {
-											this.state.items.splice(i, 1);
-											this.setState({
-												items: this.state.items,
-											});
-										}}
-									>
-										CLEAR
-									</button>
-								</li>
-							</div>
-						))}
-					</ul> */}
 				</div>
 			</>
 		);
