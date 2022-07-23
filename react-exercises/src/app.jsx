@@ -33,7 +33,7 @@ export class App extends React.Component {
         <div>
           <TodoList/>
         </div>
-        <Container>
+        <Container title="titolo">
           <Welcome/>
         </Container>
 
