@@ -30,6 +30,14 @@ export default class TodoList extends React.Component {
 		});
 	};
 
+	newState = (array) => {
+		this.setState({
+			items : array
+		})
+	}
+
+
+
 	render() {
 		return (
 			<>
@@ -40,7 +48,7 @@ export default class TodoList extends React.Component {
 						ADD
 					</button>
 					<button onClick={this.resetItems}>RESET</button>
-					{this.props.render(this.state,this.setState())}
+					{this.props.render(this.state, this.newState)}
 				</div>
 			</>
 		);

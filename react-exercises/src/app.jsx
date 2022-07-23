@@ -7,7 +7,7 @@ export class App extends React.Component {
 			<>
 				<div>
 					<TodoList
-						render={(items,setState) => {
+						render={(items,newState) => {
 							const itemsCopy = [...items.items];
 							return (
 								<ul className="list">
@@ -18,22 +18,23 @@ export class App extends React.Component {
 												<button
 													key={`button${el}${i}`}
 													id={`button${el}${i}`}
-													onClick={() => {document.querySelector(".list")
-                          .removeChild(document.querySelector(`#listEl-${i}`))
-                          setState({
-                            items : itemsCopy.splice(i,1)
-                          })}
+													onClick={() => {
+                            itemsCopy.splice(i,1)
+                            newState(itemsCopy)
+                          }
 													}
 												>
 													CLEAR
 												</button>
 											</li>
 										</div>
-									))}
+									))
+                }
 								</ul>
 							);
 						}}
-					/>
+					
+          setState = ""/>
 				</div>
 			</>
 		);
