@@ -30,25 +30,15 @@ export class App extends React.Component {
 				</div>
 				<div>
 					<TodoList
-						render={(items) => {
+						render={(items, deleteItems) => {
 							const itemsCopy = [...items.items];
 							return (
-								<ul className="list">
+								<ul>
 									{itemsCopy.map((el, i) => (
-										<div key={`div${el}${i}`} id={`listEl-${i}`}>
-											<li key={el + i}>
+										<div key={i}>
+											<li>
 												{el}
-												<button
-													key={`button${el}${i}`}
-													id={`button${el}${i}`}
-													onClick={() =>
-														document
-															.querySelector(".list")
-															.removeChild(document.querySelector(`#listEl-${i}`))
-													}
-												>
-													CLEAR
-												</button>
+												<button onClick={deleteItems(itemsCopy, i)}>CLEAR</button>
 											</li>
 										</div>
 									))}
