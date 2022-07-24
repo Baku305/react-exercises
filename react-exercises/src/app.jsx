@@ -2,14 +2,28 @@ import React from "react";
 import { ClickCounter } from "./ClickCounter";
 import ClickTracker from "./ClickTracker ";
 import { Container } from "./Container";
+import { DisplayLanguage } from "./DisplayLanguage";
 import InteractiveWelcome from "./InteractiveWelcome ";
 import Login from "./Login";
 import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
+import { languageContext } from "./LanguageContext";
 
 export class App extends React.Component {
+	state = {
+		language: "en",
+	};
+
+	handleLenguageChange = (event) => {
+		this.setState({
+			language: event.target.value,
+		});
+		console.log(this.state);
+	};
+
 	onLogin = (state) => console.log(state);
+
 	render() {
 		return (
 			<>
@@ -50,6 +64,10 @@ export class App extends React.Component {
 				<Container>
 					<Welcome />
 				</Container>
+
+				<languageContext.Provider value={this.state.language}>
+					<DisplayLanguage onChange={this.handleLenguageChange}/>
+				</languageContext.Provider>
 			</>
 		);
 	}
