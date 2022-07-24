@@ -38,7 +38,7 @@ export class App extends React.Component {
 										<div key={i}>
 											<li>
 												{el}
-												<button onClick={deleteItems(itemsCopy, i)}>CLEAR</button>
+												<button onClick={() => deleteItems(itemsCopy, i)}>CLEAR</button>
 											</li>
 										</div>
 									))}
