@@ -1,51 +1,74 @@
 import React from "react";
-import { Hello } from "./HelloWorld";
-import { Welcome } from "./Props-01";
-import { Welcome2 } from "./Props-02";
-import { Welcome3 } from "./Props-03";
-import { Welcome4 } from "./props-04";
-import { Welcome5 } from "./props-05";
-import { Welcome6 } from "./props-05";
-import { Counter } from "./Counter";
+import { ClickCounter } from "./ClickCounter";
+import ClickTracker from "./ClickTracker ";
+import { Container } from "./Container";
+import { DisplayLanguage } from "./DisplayLanguage";
+import InteractiveWelcome from "./InteractiveWelcome ";
+import Login from "./Login";
+import TodoList from "./TodoList";
+import UncontrolledLogin from "./UncontrolledLogin";
+import { Welcome } from "./Welcome";
+import { languageContext } from "./LanguageContext";
 
 export class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <div>
-          <Hello />
-        </div>
-        <div>
-          <Welcome name="Francesco" />
-        </div>
-        <div>
-          <Welcome2 />
-        </div>
-        <div>
-          <Welcome3 name="Giovanni" age="18" />
-        </div>
-        <div>
-          <Welcome4 name={<strong>Marco</strong>} />
-        </div>
-        <div>
-          <Welcome5 name="Paola" age = "20"/>
-        </div>
-        <div>
-          <Welcome5 name="Piero" age = "17"/>
-        </div>
-        <div>
-          <Welcome5 name="Fabrizio"/>
-        </div>
-        <div>
-          <Welcome6 name="Nino" age = "66"/>
-        </div>
-        <div>
-          <Welcome6 name="John" age = "64"/>
-        </div>
-        <div>
-          <Counter initialValue = {10} increment = {2}interval = {1000}/>
-        </div>
-      </div>
-    );
-  }
+	state = {
+		language: "en",
+	};
+
+	handleLenguageChange = (event) => {
+		this.setState({
+			language: event.target.value,
+		});
+		console.log(this.state);
+	};
+
+	onLogin = (state) => console.log(state);
+
+	render() {
+		return (
+			<>
+				<div>
+					<ClickCounter />
+				</div>
+				<div>
+					<ClickTracker />
+				</div>
+				<div>
+					<InteractiveWelcome />
+				</div>
+				<div>
+					<Login onLogin={this.onLogin} />
+				</div>
+				<div>
+					<UncontrolledLogin />
+				</div>
+				<div>
+					<TodoList
+						render={(items, deleteItems) => {
+							const itemsCopy = [...items.items];
+							return (
+								<ul>
+									{itemsCopy.map((el, i) => (
+										<div key={i}>
+											<li>
+												{el}
+												<button onClick={() => deleteItems(itemsCopy, i)}>CLEAR</button>
+											</li>
+										</div>
+									))}
+								</ul>
+							);
+						}}
+					/>
+				</div>
+				<Container>
+					<Welcome />
+				</Container>
+
+				<languageContext.Provider value={this.state.language}>
+					<DisplayLanguage onChange={this.handleLenguageChange}/>
+				</languageContext.Provider>
+			</>
+		);
+	}
 }
