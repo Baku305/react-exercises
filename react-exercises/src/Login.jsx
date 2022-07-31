@@ -7,6 +7,7 @@ export default function Login({onLogin}) {
     username: "",
     password: "",
     remember: false,
+				compiled: false
   });
 
   const eventHandler = (event) => {

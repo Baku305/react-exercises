@@ -2,27 +2,20 @@ import React from "react";
 
 import { Sum } from "./Sum";
 import { Welcome } from "./Welcome";
-import {ClickCounter} from "./ClickCounter"
 import Login from "./Login";
 
-export class App extends React.Component {
-  state = {
-    language: "en",
-  };
+const onLogin = (state) => {
+  console.log(state);
+};
 
-  handleLenguageChange = (event) => {
-    this.setState({
-      language: event.target.value,
-    });
-    console.log(this.state);
-  };
-
-  onLogin = (state) => console.log(state);
- 
-  render() {
-    return (
-      <>
+export function App() {
+  return (
+    <>
+      <div>
         <Welcome />
-								<Sum/>
-								<ClickCounter/><Login onLogin = {onLogin}/>
-      </>
+        <Sum />
+        <Login onLogin={onLogin} />
+      </div>
+    </>
+  );
+}
