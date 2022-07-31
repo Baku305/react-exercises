@@ -1,7 +1,5 @@
-import React from "react";
 
-export class Welcome extends React.Component {
-	render() {
+	export function Welcome() {
 		return <h1>HELLO WORLD</h1>;
 	}
-}
+
