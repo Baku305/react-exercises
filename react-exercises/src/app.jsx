@@ -5,6 +5,7 @@ import { Welcome } from "./Welcome";
 import Login from "./Login";
 import {ClickCounter} from "./ClickCounter"
 import { Counter } from "./Counter";
+import { GithubUser } from "./GithubUser";
 
 const onLogin = (state) => {
   console.log(state);
@@ -23,6 +24,7 @@ export function App() {
         <Login onLogin={onLogin} />
         <ClickCounter onCounterChange = {onCounterChange}/>
         <Counter/>
+        <GithubUser username= "Baku305"/>
       </div>
     </>
   );}
