@@ -3,7 +3,7 @@ import React from "react";
 import { Sum } from "./Sum";
 import { Welcome } from "./Welcome";
 import Login from "./Login";
-
+import {ClickCounter} from "./ClickCounter"
 
 const onLogin = (state) => {
   console.log(state);
@@ -19,5 +19,5 @@ export function App() {
         <ClickCounter/>
       </div>
     </>
-  );
+  );}
 
