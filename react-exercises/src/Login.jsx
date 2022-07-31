@@ -44,7 +44,7 @@ export default function Login({onLogin}) {
             onChange={eventHandler}
           />
         </div>
-        <button onClick={() => onLogin(userInfo)} disabled={userInfo.username === "" && userInfo.password === ""}>
+        <button onClick={() => onLogin(userInfo)} disabled={userInfo.username === "" || userInfo.password === ""}>
           LOGIN
         </button>
       </div>
