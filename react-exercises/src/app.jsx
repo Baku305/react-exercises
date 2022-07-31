@@ -9,6 +9,10 @@ const onLogin = (state) => {
   console.log(state);
 };
 
+const onCounterChange = (state) => {
+  console.log(state);
+}
+
 export function App() {
   return (
     <>
@@ -16,7 +20,7 @@ export function App() {
         <Welcome />
         <Sum />
         <Login onLogin={onLogin} />
-        <ClickCounter/>
+        <ClickCounter onCounterChange = {onCounterChange}/>
       </div>
     </>
   );}
