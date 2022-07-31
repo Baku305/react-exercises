@@ -1,19 +1,17 @@
 import React from "react";
 import Login from "./Login";
 
-export class App extends React.Component {
-
-  onLogin = (state) => {
+  const onLogin = (state) => {
 console.log(state)
   }
 
-  render() {
+  export function App () {
     return (
         <>
         <div>
-          <Login onLogin = {this.onLogin}/>
+          <Login onLogin = {onLogin}/>
         </div>
         </>
     );
   }
-}
+
