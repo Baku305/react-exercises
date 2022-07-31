@@ -4,6 +4,7 @@ import { Sum } from "./Sum";
 import { Welcome } from "./Welcome";
 import Login from "./Login";
 
+
 const onLogin = (state) => {
   console.log(state);
 };
@@ -15,7 +16,8 @@ export function App() {
         <Welcome />
         <Sum />
         <Login onLogin={onLogin} />
+        <ClickCounter/>
       </div>
     </>
   );
-}
+
