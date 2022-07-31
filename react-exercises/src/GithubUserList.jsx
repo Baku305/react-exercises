@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-export function GithubUser({ username }) {
+export function GithubUserList({ usernameList }) {
 
 
-  const [data, setData] = useState({});
-  const [error,setError] = useState({})
+  const [data, setData] = useState([]);
+  const [error,setError] = useState([])
   const [status,setStatus] = useState("")
 
   const getUser = async (username) => {
@@ -18,10 +18,12 @@ export function GithubUser({ username }) {
     const fetching = await fetch(fetchUser);
 
     setStatus(fetching.status)
+
   
     const json = await fetching.json();
+   
+    setData((d) => [...d,json])
 
-    setData(json)
    } catch (error) {
     setError(error)
     setData(null)
@@ -30,13 +32,14 @@ export function GithubUser({ username }) {
 
   useEffect(()=>{
 
-   getUser(username)
+    usernameList.forEach((user) => {getUser(user)}) 
 
-  },[username])
+  },[usernameList])
+
 
   return (
     <>
-    {status === 200 ? <h1>{data.login}</h1> : <h1>{data.message}</h1>}
+    {status === 200 ? data.forEach(d => <h1>{d.name}</h1>) : data.forEach(d => <h1>{d.message}</h1>)}
     </>
   );
 }

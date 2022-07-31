@@ -6,6 +6,7 @@ import Login from "./Login";
 import {ClickCounter} from "./ClickCounter"
 import { Counter } from "./Counter";
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 
 const onLogin = (state) => {
   console.log(state);
@@ -25,6 +26,7 @@ export function App() {
         <ClickCounter onCounterChange = {onCounterChange}/>
         <Counter/>
         <GithubUser username= "Baku305"/>
+        <GithubUserList usernameList= {["alantheandroid","Baku305"]}/>
       </div>
     </>
   );}
