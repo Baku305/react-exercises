@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { GithubUser } from "./GithubUser";
+import Login from "./Login";
 
 export function GithubUserList() {
 
@@ -16,10 +17,9 @@ export function GithubUserList() {
 
   const [userNameList, setUserNameList] = useState([])
 
-  const handleDeleteUsername() => {
-    setInputValue((i) => i.find((el) => {
-      const elToSlice = el.
-    }))
+  const handleDeleteUsername = () => {
+   const inputValue = userNameList.find(inputValue => inputValue)
+   console.log(inputValue);
   }
 
 
@@ -32,12 +32,12 @@ export function GithubUserList() {
           <h5>insert username to add in your list</h5>
           <input type="text" className="userListInput" onChange={handlerInputUsername} />
           <button className="userListInputButton" onClick={handleSearchUsername}>SEARCH</button>
-          <button className="usernameDeleteButton" onClick={{handleDeleteUsername}}></button> 
+          <button className="usernameDeleteButton" onClick={handleDeleteUsername}>DELETE</button> 
         </div>
         <div>
           <h4>USERNAME LIST</h4>
-        {userNameList.map((username) => {
-           return(<GithubUser username={username}/>)
+        {userNameList.map((username, index) => {
+           return(<GithubUser key = {index} username={username}/>)
         })}
         </div>
       </div>
