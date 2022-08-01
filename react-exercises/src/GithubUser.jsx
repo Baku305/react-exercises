@@ -31,7 +31,7 @@ export function GithubUser({ username }) {
 
   useEffect(()=>{
 
-   //getUser(username)
+   getUser(username)
 
   },[username])
 
