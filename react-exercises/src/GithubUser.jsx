@@ -20,6 +20,7 @@ export function GithubUser({ username }) {
     setStatus(fetching.status)
   
     const json = await fetching.json();
+    console.log(json);
 
     setData(json)
    } catch (error) {
@@ -30,13 +31,24 @@ export function GithubUser({ username }) {
 
   useEffect(()=>{
 
-   getUser(username)
+   //getUser(username)
 
   },[username])
 
   return (
     <>
-    {status === 200 ? <h1>{data.login}</h1> : <h1>{data.message}</h1>}
+    {status === 200 ? 
+    <div className="UserCardWrapper">
+      <h1>{data.login}</h1>
+      <div className="infoWrapper">
+        <a href={data.html_url}>
+          <div className="linkWrapper">
+            {data.html_url}
+          </div>
+        </a>
+      </div>
+    </div>
+    : <h1>{data.message}</h1>}
     </>
   );
 }

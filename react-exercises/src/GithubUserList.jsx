@@ -1,45 +1,37 @@
-
 import { useEffect } from "react";
 import { useState } from "react";
+import { GithubUser } from "./GithubUser";
 
+export function GithubUserList() {
 
-export function GithubUserList({ usernameList }) {
+  const [inputValue, setInputValue] = useState("")
 
+  const handlerInputUsername = (event) => {
+    setInputValue(event.target.value)
+  }
 
-  const [data, setData] = useState([]);
-  const [error,setError] = useState([])
-  const [status,setStatus] = useState("")
+  const handleSearchUsername = () => {
+    setUserNameList((list)=>[...list,inputValue])
+  }
 
-  const getUser = async (username) => {
+  const [userNameList, setUserNameList] = useState([])
 
-   try {
-    const fetchUser = `https://api.github.com/users/${username}`;
-  
-    const fetching = await fetch(fetchUser);
-
-    setStatus(fetching.status)
-
-  
-    const json = await fetching.json();
-   
-    setData((d) => [...d,json])
-
-   } catch (error) {
-    setError(error)
-    setData(null)
-   }
-  };
-
-  useEffect(()=>{
-
-    usernameList.forEach((user) => {getUser(user)}) 
-
-  },[usernameList])
 
 
   return (
     <>
-    {status === 200 ? data.forEach(d => <h1>{d.name}</h1>) : data.forEach(d => <h1>{d.message}</h1>)}
+      <div className="userListContainer">
+        <div className="userListInputContainer">
+          <input type="text" className="userListInput" onChange={handlerInputUsername} />
+          <button className="userListInputButton" onClick={handleSearchUsername}>SEARCH</button>
+        </div>
+        <div>
+        {userNameList.map((username) => {
+          /**return */
+          (<GithubUser username={username}/>)
+        })}
+        </div>
+      </div>
     </>
   );
 }

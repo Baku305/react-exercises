@@ -26,7 +26,7 @@ export function App() {
         <ClickCounter onCounterChange = {onCounterChange}/>
         <Counter/>
         <GithubUser username= "Baku305"/>
-        <GithubUserList usernameList= {["alantheandroid","Baku305"]}/>
+        <GithubUserList/>
       </div>
     </>
   );}
