@@ -13,7 +13,8 @@ export default function Login({onLogin}) {
 				compiled: false
   })
   
-  useLogin(userInfo.username,userInfo.password)
+  const {username,password} = useLogin(userInfo.username,userInfo.password)
+  console.log(`you username is: ${username} and you password is ${password}`)
 
   const eventHandler = (event) => {
 			setUserInfo(
