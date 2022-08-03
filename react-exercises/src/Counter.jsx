@@ -1,14 +1,16 @@
 import React from "react";
+import { useCallback } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { UseCounter } from "./useCounter";
+
 
 
     export function Counter(){
 
         const [count, setCount] = useState(0)
 
-        UseCounter(count)
+        useCallback(()=>UseCounter(count),[count]) 
 
         useEffect(()=>{
             const interval = setInterval(()=>{
