@@ -10,7 +10,7 @@ import { UseCounter } from "./useCounter";
 
         const [count, setCount] = useState(0)
 
-        useCallback(()=>UseCounter(count),[count]) 
+        UseCounter(count) 
 
         useEffect(()=>{
             const interval = setInterval(()=>{
