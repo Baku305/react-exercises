@@ -7,7 +7,7 @@ export function App() {
   return (
     <>
       <div>
-        <GithubUser username= "Baku305"/>
+        <GithubUser username= "Baku30+à5"/>
       </div>
     </>
   );}

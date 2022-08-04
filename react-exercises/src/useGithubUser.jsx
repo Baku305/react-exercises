@@ -5,6 +5,8 @@ export function useGitubUser({username}){
 
  const [data, setData] = useState({});
  const [error,setError] = useState({})
+ const [status,setStatus] =useState({})
+
 
  const getUser = async (username) => {
 
@@ -12,16 +14,20 @@ export function useGitubUser({username}){
    const fetchUser = `https://api.github.com/users/${username}`;
  
    const fetching = await fetch(fetchUser);
+
+   
  
    const json = await fetching.json();
 
-   setData(json)
- 
+   setStatus(fetching.status)
+
+   status === 200 && setData(json)
+   status !== 200 && setError(json)
    console.log(json)
   } catch (error) {
    setError(error)
    setData(null)
-  }
+  } 
  };
 
  useEffect(()=>{
@@ -30,5 +36,7 @@ export function useGitubUser({username}){
 
  },[username])
 
- return {data,error}
+ 
+
+ return {data,error,status}
 }

@@ -1,6 +1,4 @@
 
-import { useEffect } from "react";
-import { useState } from "react";
 import { useGitubUser } from "./useGithubUser";
 
 
@@ -34,11 +32,11 @@ export function GithubUser({ username }) {
 
   // },[username])
 
-  const {data, error} = useGitubUser({username})
-
+  const {data, error, status} = useGitubUser({username})
   return (
     <>
-    {data !== {} ? <h1>{data.login}</h1> : <h1>{error.message}</h1>}
+    {!status && <h1>Loading...</h1>}
+    {status === 200 ? <h1>{data.login}</h1> : <h1>{error.message}</h1>}
     </>
   );
 }
