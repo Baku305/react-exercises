@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
+import { useLogin } from "./useLogin";
 
 
 export default function Login({onLogin}) {
+
+    
 
   const [userInfo, setUserInfo] = useState({
     username: "",
     password: "",
     remember: false,
 				compiled: false
-  });
+  })
+  
+  const {username,password} = useLogin(userInfo.username,userInfo.password)
+  console.log(`you username is: ${username} and you password is ${password}`)
 
   const eventHandler = (event) => {
 			setUserInfo(
