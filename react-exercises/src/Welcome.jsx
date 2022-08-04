@@ -1,5 +1,10 @@
+import { DisplayLanguage } from "./DisplayLanguage";
 
 	export function Welcome() {
-		return <h1>HELLO WORLD</h1>;
+		return(
+		<div>
+			<DisplayLanguage/>
+			<h1>HELLO WORLD</h1>
+		</div>)
 	}
 
