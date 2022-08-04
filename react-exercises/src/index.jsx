@@ -1,8 +1,8 @@
 import React from "react";
 import {createRoot} from "react-dom/client"
-import { App } from "./app";
 
 import './index.css'
+import { Root } from "./Root";
 
 
 
@@ -10,7 +10,5 @@ import './index.css'
 
 const root = createRoot(document.getElementById("root"))
 
-// const appEl = <App/>
-
-root.render(<App/>)
+root.render(<Root/>)
 
