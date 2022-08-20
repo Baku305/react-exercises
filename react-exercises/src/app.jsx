@@ -4,6 +4,7 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { ClickCounter } from "./Counter";
 import { ShowGithubUser } from "./ShowGithubUser";
 import { useState } from "react";
+import { NotFound } from "./NotFound";
 
 export function App() {
 
@@ -20,7 +21,7 @@ export function App() {
   return (
     <>
       <div>
-        <ul>
+        <ul style={{display:"flex" , listStyleType:"none" , gap:"20px"}}>
           <li>
             <Link to={"/"}>WELCOME</Link>
           </li>
@@ -36,6 +37,7 @@ export function App() {
           <Route path="/" element={<Welcome name="ERIK" />}></Route>
           <Route path="/counter" element={<ClickCounter />}></Route>
           <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route path="/*" element = {<NotFound />}/>
         </Routes>
       </div>
     </>
