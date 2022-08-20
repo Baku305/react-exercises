@@ -2,6 +2,7 @@ import React from "react";
 import { Welcome } from "./Welcome";
 import { Routes, Route } from "react-router-dom";
 import { ClickCounter } from "./Counter";
+import { ShowGithubUser } from "./ShowGithubUser";
 
 export function App() {
   return (
@@ -10,7 +11,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<Welcome name="ERIK" />}></Route>
           <Route path="/counter" element={<ClickCounter />}></Route>
-          <Route path="/:username"/>
+          <Route path="users/:username" element={<ShowGithubUser />}/>
         </Routes>
       </div>
     </>
