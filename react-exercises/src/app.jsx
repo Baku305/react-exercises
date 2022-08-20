@@ -10,6 +10,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<Welcome name="ERIK" />}></Route>
           <Route path="/counter" element={<ClickCounter />}></Route>
+          <Route path="/:username"/>
         </Routes>
       </div>
     </>
