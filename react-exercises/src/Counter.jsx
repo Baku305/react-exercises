@@ -13,7 +13,6 @@ export function ClickCounter() {
 
   return (
     <div>
-     <Link to="/" > Welcome</Link>
       <h1>Count : {count}</h1>
       <button onClick = {()=>eventHandler()}>Increase</button>
     </div>
