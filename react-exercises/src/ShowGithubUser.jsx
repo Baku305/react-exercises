@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+
+import { Outlet, useParams } from "react-router-dom";
 import { GithubUser } from "./GithubUser";
 
 export function ShowGithubUser(){
