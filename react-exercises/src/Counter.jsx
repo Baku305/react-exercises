@@ -9,6 +9,7 @@ import {UseCounter} from "./useCounter"
         const [count, setCount] = useState(0)
 
         const memoizeCounter = useCallback(()=>UseCounter(count),[count])
+        
         memoizeCounter()
 
         useEffect(()=>{
